@@ -1,0 +1,47 @@
+import json
+import urllib.request
+from collections import defaultdict
+
+# 这里放您需要合并的上游 JSON 直链
+# 注意：必须是 sing-box 格式的规则集（有 rules 数组，包含 domain/domain_suffix）
+sources = [
+    # 例：MetaCubeX 的广告规则
+    "https://raw.githubusercontent.com/MetaCubeX/meta-rules-dat/sing/geo/geosite/category-ads-all.json",
+    # 例：Karing 的广告规则
+    "https://raw.githubusercontent.com/KaringX/karing-ruleset/sing/geo/geosite/category-ads-all.json"
+]
+
+merged_data = defaultdict(set)
+
+def fetch_and_parse(url):
+    print(f"正在拉取: {url}")
+    req = urllib.request.Request(url, headers={'User-Agent': 'Mozilla/5.0'})
+    try:
+        with urllib.request.urlopen(req, timeout=30) as response:
+            data = json.loads(response.read().decode('utf-8'))
+            for rule in data.get("rules", []):
+                # 提取所有可能的域名匹配字段
+                for key in ["domain", "domain_suffix", "domain_keyword"]:
+                    if key in rule and isinstance(rule[key], list):
+                        merged_data[key].update(rule[key])
+    except Exception as e:
+        print(f"拉取失败 {url}: {e}")
+
+for url in sources:
+    fetch_and_parse(url)
+
+# 生成符合 sing-box 标准的 JSON 结构
+final_rules = []
+for key, value_set in merged_data.items():
+    final_rules.append({key: sorted(list(value_set))})
+
+output_json = {
+    "version": 3,
+    "rules": final_rules
+}
+
+with open("merged-ads.json", "w", encoding="utf-8") as f:
+    json.dump(output_json, f, indent=2, ensure_ascii=False)
+
+total = sum(len(v) for v in merged_data.values())
+print(f"合并完成！总计提取特征 {total} 条，已生成 merged-ads.json")
