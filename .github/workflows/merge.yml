@@ -10,10 +10,10 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - name: 检出代码
-        uses: actions/checkout@v3
+        uses: actions/checkout@v5  # 从 v3 升级到 v5
 
       - name: 设置 Python
-        uses: actions/setup-python@v4
+        uses: actions/setup-python@v6  # 从 v4 升级到 v6
         with:
           python-version: '3.x'
 
