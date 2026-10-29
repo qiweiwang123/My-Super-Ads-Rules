@@ -1,0 +1,38 @@
+name: Auto Merge Ads Rules
+
+on:
+  schedule:
+    - cron: '0 2 * * *' # 每天 UTC 2点（北京时间 10点）自动运行
+  workflow_dispatch: # 允许手动触发
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    steps:
+      - name: 检出代码
+        uses: actions/checkout@v3
+
+      - name: 设置 Python
+        uses: actions/setup-python@v4
+        with:
+          python-version: '3.x'
+
+      - name: 运行合并脚本
+        run: python merge.py
+
+      - name: 下载 sing-box 核心
+        run: |
+          wget https://github.com/SagerNet/sing-box/releases/download/v1.8.0/sing-box-1.8.0-linux-amd64.tar.gz
+          tar -xzvf sing-box-1.8.0-linux-amd64.tar.gz
+          mv sing-box-1.8.0-linux-amd64/sing-box .
+
+      - name: 编译为 SRS 二进制
+        run: ./sing-box rule-set compile merged-ads.json
+
+      - name: 提交并推送 (Commit)
+        run: |
+          git config --global user.name 'GitHub Actions'
+          git config --global user.email 'actions@github.com'
+          git add merged-ads.json merged-ads.srs
+          git commit -m "Auto update merged ads rules" || exit 0
+          git push
