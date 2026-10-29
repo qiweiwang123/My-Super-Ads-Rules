@@ -1,0 +1,30 @@
+name: Auto Merge Ads JSON
+
+on:
+  schedule:
+    - cron: '0 18 * * *' # 每天 UTC 18:00（北京时间凌晨2点）自动运行
+  workflow_dispatch: # 允许您在网页上手动点击触发
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    steps:
+      - name: 检出代码
+        uses: actions/checkout@v4
+
+      - name: 设置 Python 环境
+        uses: actions/setup-python@v5
+        with:
+          python-version: '3.10'
+
+      - name: 运行合并脚本
+        run: python merge.py
+
+      - name: 自动提交并推送新 JSON
+        run: |
+          git config --global user.name 'Auto Merger'
+          git config --global user.email 'actions@github.com'
+          git add merged-ads.json
+          # 如果没有变化，不报错
+          git diff --quiet && git diff --staged --quiet || git commit -m "Auto Update: Merge & Deduplicate Ads JSON"
+          git push
