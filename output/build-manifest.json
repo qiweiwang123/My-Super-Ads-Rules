@@ -1,39 +1,121 @@
 {
   "format": "sing-box rule-set",
-  "output_version": 5,
-  "output_name": "ads-tracking",
-  "source_count": 3,
-  "input_rule_count": 3,
-  "unique_rule_count": 3,
-  "duplicate_rule_count": 0,
-  "srs_sha256": "326f27d543910c9f2e54e42af170ba5ded3864590a0d5a3cce67fb59076eccb2",
-  "sources": [
+  "generated_by": "srs-auto-merge/1.1",
+  "group_count": 3,
+  "skipped_groups": [],
+  "links": {
+    "repo": "OWNER/REPO",
+    "branch": "main",
+    "path": "output"
+  },
+  "groups": [
     {
-      "name": "MetaCubeX category-ads-all",
-      "host": "raw.githubusercontent.com",
-      "format": "json",
-      "rules": 1,
-      "sha256": "1f2e5eac4cbeac91904827ccc34556add8c91d2d56bdc34b7e0ceab9038af7c4",
-      "license_url": "https://github.com/MetaCubeX/meta-rules-dat",
-      "attribution": ""
+      "name": "广告与追踪",
+      "description": "广告、追踪器、公共统计、国内 HTTPDNS 广告",
+      "output_name": "ads-tracking",
+      "output_version": 5,
+      "source_count": 3,
+      "input_rule_count": 3,
+      "unique_rule_count": 3,
+      "duplicate_rule_count": 0,
+      "srs_sha256": "76c2a0385bd7f2afa2ce2873a219314dc3af66472d9a091c694c6e0a4a1173a4",
+      "links": {
+        "raw": "https://raw.githubusercontent.com/OWNER/REPO/main/output/ads-tracking.srs",
+        "jsdelivr": "https://cdn.jsdelivr.net/gh/OWNER/REPO@main/output/ads-tracking.srs",
+        "fastly": "https://fastly.jsdelivr.net/gh/OWNER/REPO@main/output/ads-tracking.srs"
+      },
+      "sources": [
+        {
+          "name": "KaringX category-ads-all",
+          "host": "fastly.jsdelivr.net",
+          "format": "srs",
+          "rules": 1,
+          "sha256": "b4577c0be9f56bb352a864dae752557cce1b15df2b8de3a1a0b9a84cc3e67d9f",
+          "license_url": "https://github.com/KaringX/karing-ruleset",
+          "attribution": ""
+        },
+        {
+          "name": "KaringX tracker",
+          "host": "fastly.jsdelivr.net",
+          "format": "srs",
+          "rules": 1,
+          "sha256": "a8ecd7effc27b88e5673581342f2b8cd9cada88544fff1afa89aa3994e70ab96",
+          "license_url": "https://github.com/KaringX/karing-ruleset",
+          "attribution": ""
+        },
+        {
+          "name": "KaringX category-public-tracker",
+          "host": "fastly.jsdelivr.net",
+          "format": "srs",
+          "rules": 1,
+          "sha256": "ad22848819725d8166a0c552b15cb9357de214a5fd4dda56952c8d1b11cb9716",
+          "license_url": "https://github.com/KaringX/karing-ruleset",
+          "attribution": ""
+        }
+      ]
     },
     {
-      "name": "MetaCubeX tracker",
-      "host": "raw.githubusercontent.com",
-      "format": "json",
-      "rules": 1,
-      "sha256": "96f3b92e29275b5ed253223b7000f871049ee0a5c797441f7f7a9d84780fa0d0",
-      "license_url": "https://github.com/MetaCubeX/meta-rules-dat",
-      "attribution": ""
+      "name": "代理兜底",
+      "description": "非中国地址，放在规则链靠后作为兜底代理",
+      "output_name": "proxy",
+      "output_version": 5,
+      "source_count": 1,
+      "input_rule_count": 1,
+      "unique_rule_count": 1,
+      "duplicate_rule_count": 0,
+      "srs_sha256": "ca352bbcd254d90c2cedf51889bbc216dce8b2954802984f504064775fa12bdf",
+      "links": {
+        "raw": "https://raw.githubusercontent.com/OWNER/REPO/main/output/proxy.srs",
+        "jsdelivr": "https://cdn.jsdelivr.net/gh/OWNER/REPO@main/output/proxy.srs",
+        "fastly": "https://fastly.jsdelivr.net/gh/OWNER/REPO@main/output/proxy.srs"
+      },
+      "sources": [
+        {
+          "name": "KaringX geolocation-!cn",
+          "host": "fastly.jsdelivr.net",
+          "format": "srs",
+          "rules": 1,
+          "sha256": "ca352bbcd254d90c2cedf51889bbc216dce8b2954802984f504064775fa12bdf",
+          "license_url": "https://github.com/KaringX/karing-ruleset",
+          "attribution": ""
+        }
+      ]
     },
     {
-      "name": "KaringX BanAD",
-      "host": "raw.githubusercontent.com",
-      "format": "srs",
-      "rules": 1,
-      "sha256": "8dd5d97e75994b3ad65de83c39948bb7284c280b401765fcd4f78b7f1c7e2dba",
-      "license_url": "https://github.com/KaringX/karing-ruleset",
-      "attribution": ""
+      "name": "国内直连",
+      "description": "中国域名与中国 IP，命中后直连",
+      "output_name": "direct",
+      "output_version": 5,
+      "source_count": 2,
+      "input_rule_count": 2,
+      "unique_rule_count": 2,
+      "duplicate_rule_count": 0,
+      "srs_sha256": "9b3309bb37be14172e9a6aecb8e0af32fab7842270d1d14061e2d437ece44a35",
+      "links": {
+        "raw": "https://raw.githubusercontent.com/OWNER/REPO/main/output/direct.srs",
+        "jsdelivr": "https://cdn.jsdelivr.net/gh/OWNER/REPO@main/output/direct.srs",
+        "fastly": "https://fastly.jsdelivr.net/gh/OWNER/REPO@main/output/direct.srs"
+      },
+      "sources": [
+        {
+          "name": "KaringX cn domains",
+          "host": "fastly.jsdelivr.net",
+          "format": "srs",
+          "rules": 1,
+          "sha256": "1fe6deffc4378243a33d88c1d0000dbc1d05419bb5045bdf0fc67c3fc929e0d7",
+          "license_url": "https://github.com/KaringX/karing-ruleset",
+          "attribution": ""
+        },
+        {
+          "name": "KaringX cn ip",
+          "host": "fastly.jsdelivr.net",
+          "format": "srs",
+          "rules": 1,
+          "sha256": "ad50a548317f437035735ea9aa117ff5c54f51124d9565a14629c7c0a34db918",
+          "license_url": "https://github.com/KaringX/karing-ruleset",
+          "attribution": ""
+        }
+      ]
     }
   ]
 }

@@ -1,0 +1,34 @@
+{
+  "repo": "OWNER/REPO",
+  "branch": "main",
+  "path": "output",
+  "groups": [
+    {
+      "name": "广告与追踪",
+      "output_name": "ads-tracking",
+      "links": {
+        "raw": "https://raw.githubusercontent.com/OWNER/REPO/main/output/ads-tracking.srs",
+        "jsdelivr": "https://cdn.jsdelivr.net/gh/OWNER/REPO@main/output/ads-tracking.srs",
+        "fastly": "https://fastly.jsdelivr.net/gh/OWNER/REPO@main/output/ads-tracking.srs"
+      }
+    },
+    {
+      "name": "代理兜底",
+      "output_name": "proxy",
+      "links": {
+        "raw": "https://raw.githubusercontent.com/OWNER/REPO/main/output/proxy.srs",
+        "jsdelivr": "https://cdn.jsdelivr.net/gh/OWNER/REPO@main/output/proxy.srs",
+        "fastly": "https://fastly.jsdelivr.net/gh/OWNER/REPO@main/output/proxy.srs"
+      }
+    },
+    {
+      "name": "国内直连",
+      "output_name": "direct",
+      "links": {
+        "raw": "https://raw.githubusercontent.com/OWNER/REPO/main/output/direct.srs",
+        "jsdelivr": "https://cdn.jsdelivr.net/gh/OWNER/REPO@main/output/direct.srs",
+        "fastly": "https://fastly.jsdelivr.net/gh/OWNER/REPO@main/output/direct.srs"
+      }
+    }
+  ]
+}
