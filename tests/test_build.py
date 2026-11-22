@@ -104,5 +104,131 @@ class ValidationTests(unittest.TestCase):
         self.assertEqual(merged, first["rules"])
 
 
+@unittest.skipUnless(SING_BOX.is_file() or shutil.which(str(SING_BOX)), "sing-box is not installed")
+class MultiGroupTests(unittest.TestCase):
+    """多组配置与三套链接输出的回归测试。"""
+
+    def setUp(self) -> None:
+        self.previous_tempdir = tempfile.tempdir
+        self.workspace_temp = ROOT / ".test-tmp"
+        self.workspace_temp.mkdir(exist_ok=True)
+        tempfile.tempdir = str(self.workspace_temp)
+        self.temp = tempfile.TemporaryDirectory(prefix="srs-auto-merge-groups-")
+        self.root = Path(self.temp.name)
+        self.output = self.root / "output"
+        self.config_path = self.root / "sources.json"
+
+    def tearDown(self) -> None:
+        self.temp.cleanup()
+        tempfile.tempdir = self.previous_tempdir
+        try:
+            self.workspace_temp.rmdir()
+        except OSError:
+            pass
+
+    def write_groups(self, groups: list[dict], **options) -> None:
+        config = {"output_version": 5, "groups": groups, **options}
+        self.config_path.write_text(json.dumps(config), encoding="utf-8")
+
+    def invoke(self, responses: dict[str, bytes], **kwargs) -> dict:
+        def fake_download(url: str, _max_bytes: int, _timeout: int) -> tuple[bytes, str]:
+            return responses[url], url
+
+        with patch.object(builder, "download_source", side_effect=fake_download):
+            return builder.build(self.config_path, self.output, SING_BOX, **kwargs)
+
+    def test_builds_each_group_independently(self) -> None:
+        ads = {"version": 5, "rules": [{"domain_suffix": ["ads.example"]}]}
+        direct = {"version": 5, "rules": [{"domain_suffix": ["cn.example"]}]}
+        self.write_groups([
+            {"name": "广告", "output_name": "ads", "sources": [
+                {"name": "ads-a", "url": "https://example.test/ads", "format": "json"}]},
+            {"name": "直连", "output_name": "direct", "sources": [
+                {"name": "cn-a", "url": "https://example.test/cn", "format": "json"}]},
+        ])
+        report = self.invoke({
+            "https://example.test/ads": json.dumps(ads).encode(),
+            "https://example.test/cn": json.dumps(direct).encode(),
+        })
+        self.assertEqual([g["output_name"] for g in report["groups"]], ["ads", "direct"])
+        for name in ("ads", "direct"):
+            self.assertTrue((self.output / f"{name}.srs").is_file())
+            self.assertTrue((self.output / f"{name}.json").is_file())
+        manifest = json.loads((self.output / "build-manifest.json").read_text(encoding="utf-8"))
+        self.assertEqual(manifest["group_count"], 2)
+
+    def test_generates_three_link_forms_for_every_group(self) -> None:
+        doc = {"version": 5, "rules": [{"domain_suffix": ["example.org"]}]}
+        self.write_groups(
+            [{"name": "广告", "output_name": "ads", "sources": [
+                {"name": "src", "url": "https://example.test/a", "format": "json"}]}],
+            links={"repo": "alice/my-rules", "branch": "main", "path": "output"},
+        )
+        self.invoke({"https://example.test/a": json.dumps(doc).encode()})
+        links = json.loads((self.output / "links.json").read_text(encoding="utf-8"))
+        group = links["groups"][0]["links"]
+        self.assertEqual(group["raw"], "https://raw.githubusercontent.com/alice/my-rules/main/output/ads.srs")
+        self.assertEqual(group["jsdelivr"], "https://cdn.jsdelivr.net/gh/alice/my-rules@main/output/ads.srs")
+        self.assertEqual(group["fastly"], "https://fastly.jsdelivr.net/gh/alice/my-rules@main/output/ads.srs")
+        markdown = (self.output / "links.md").read_text(encoding="utf-8")
+        self.assertIn("cdn.jsdelivr.net", markdown)
+        self.assertIn("fastly.jsdelivr.net", markdown)
+
+    def test_shared_source_is_downloaded_once(self) -> None:
+        doc = {"version": 5, "rules": [{"domain_suffix": ["example.org"]}]}
+        calls: list[str] = []
+        self.write_groups([
+            {"name": "A", "output_name": "a", "sources": [
+                {"name": "same", "url": "https://example.test/same", "format": "json"}]},
+            {"name": "B", "output_name": "b", "sources": [
+                {"name": "same", "url": "https://example.test/same", "format": "json"}]},
+        ])
+
+        def fake_download(url: str, _max_bytes: int, _timeout: int) -> tuple[bytes, str]:
+            calls.append(url)
+            return json.dumps(doc).encode(), url
+
+        with patch.object(builder, "download_source", side_effect=fake_download):
+            builder.build(self.config_path, self.output, SING_BOX)
+        self.assertEqual(calls.count("https://example.test/same"), 1)
+
+    def test_rejects_duplicate_output_names(self) -> None:
+        self.write_groups([
+            {"name": "A", "output_name": "dup", "sources": [
+                {"name": "x", "url": "https://example.test/x", "format": "json"}]},
+            {"name": "B", "output_name": "dup", "sources": [
+                {"name": "y", "url": "https://example.test/y", "format": "json"}]},
+        ])
+        with self.assertRaisesRegex(builder.BuildError, "duplicate output_name"):
+            self.invoke({})
+
+    def test_rejects_group_without_enabled_sources(self) -> None:
+        self.write_groups([{"name": "空组", "output_name": "empty", "sources": [
+            {"name": "off", "url": "https://example.test/off", "format": "json", "enabled": False}]}])
+        with self.assertRaisesRegex(builder.BuildError, "no enabled sources"):
+            self.invoke({})
+
+
+    def test_disabled_group_is_skipped(self) -> None:
+        doc = {"version": 5, "rules": [{"domain_suffix": ["example.org"]}]}
+        self.write_groups([
+            {"name": "开", "output_name": "on", "sources": [
+                {"name": "a", "url": "https://example.test/a", "format": "json"}]},
+            {"name": "关", "output_name": "off", "enabled": False, "sources": [
+                {"name": "b", "url": "https://example.test/b", "format": "json"}]},
+        ])
+        report = self.invoke({"https://example.test/a": json.dumps(doc).encode()})
+        self.assertEqual([g["output_name"] for g in report["groups"]], ["on"])
+        self.assertFalse((self.output / "off.srs").exists())
+        manifest = json.loads((self.output / "build-manifest.json").read_text(encoding="utf-8"))
+        self.assertEqual(manifest["skipped_groups"], ["关"])
+
+    def test_rejects_all_groups_disabled(self) -> None:
+        self.write_groups([{"name": "关", "output_name": "off", "enabled": False, "sources": [
+            {"name": "b", "url": "https://example.test/b", "format": "json"}]}])
+        with self.assertRaisesRegex(builder.BuildError, "all groups are disabled"):
+            self.invoke({})
+
+
 if __name__ == "__main__":
     unittest.main()
