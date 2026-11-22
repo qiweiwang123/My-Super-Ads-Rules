@@ -63,7 +63,7 @@
       "input_rule_count": 1,
       "unique_rule_count": 1,
       "duplicate_rule_count": 0,
-      "srs_sha256": "ca352bbcd254d90c2cedf51889bbc216dce8b2954802984f504064775fa12bdf",
+      "srs_sha256": "da1145cbe344bd287dd528d3eabb432c5bf50d0129f5b8a7f1a8b2c16da87e7d",
       "links": {
         "raw": "https://raw.githubusercontent.com/OWNER/REPO/main/output/proxy.srs",
         "jsdelivr": "https://cdn.jsdelivr.net/gh/OWNER/REPO@main/output/proxy.srs",
@@ -75,7 +75,7 @@
           "host": "fastly.jsdelivr.net",
           "format": "srs",
           "rules": 1,
-          "sha256": "ca352bbcd254d90c2cedf51889bbc216dce8b2954802984f504064775fa12bdf",
+          "sha256": "da1145cbe344bd287dd528d3eabb432c5bf50d0129f5b8a7f1a8b2c16da87e7d",
           "license_url": "https://github.com/KaringX/karing-ruleset",
           "attribution": ""
         }
