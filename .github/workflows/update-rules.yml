@@ -1,0 +1,78 @@
+name: Build and publish merged SRS
+
+on:
+  workflow_dispatch:
+  schedule:
+    # Once a day at 02:17 Shanghai time (18:17 UTC).
+    - cron: "17 18 * * *"
+  push:
+    paths:
+      - "config/sources.json"
+      - "scripts/**"
+      - "tests/**"
+      - ".github/workflows/update-rules.yml"
+      - "requirements.txt"
+
+permissions:
+  contents: write
+
+concurrency:
+  group: srs-refresh-${{ github.ref }}
+  cancel-in-progress: false
+
+jobs:
+  merge:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Check out repository
+        uses: actions/checkout@v4
+        with:
+          ref: ${{ github.ref }}
+
+      - name: Set up Python
+        uses: actions/setup-python@v5
+        with:
+          python-version: "3.12"
+
+      - name: Install sing-box
+        shell: bash
+        env:
+          SING_BOX_VERSION: "1.14.4"
+        run: |
+          set -euo pipefail
+          archive="sing-box-${SING_BOX_VERSION}-linux-amd64.tar.gz"
+          curl --fail --location --retry 3 \
+            "https://github.com/SagerNet/sing-box/releases/download/v${SING_BOX_VERSION}/${archive}" \
+            --output sing-box.tar.gz
+          mkdir -p .tools
+          tar -xzf sing-box.tar.gz -C .tools --strip-components=1 \
+            "sing-box-${SING_BOX_VERSION}-linux-amd64/sing-box"
+          chmod +x .tools/sing-box
+          ./.tools/sing-box version
+
+      - name: Run tests
+        env:
+          SING_BOX_BIN: ./.tools/sing-box
+        run: python -m unittest discover -s tests -v
+
+      - name: Download sources and build SRS
+        run: >-
+          python scripts/build.py
+          --config config/sources.json
+          --output-dir output
+          --sing-box ./.tools/sing-box
+          --expected-sing-box-version 1.14.4
+
+      - name: Commit changed rule sets
+        shell: bash
+        run: |
+          set -euo pipefail
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git add output/
+          if git diff --cached --quiet; then
+            echo "No generated output changes."
+            exit 0
+          fi
+          git commit -m "chore: refresh merged SRS rules"
+          git push

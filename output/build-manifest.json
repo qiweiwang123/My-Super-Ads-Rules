@@ -1,0 +1,39 @@
+{
+  "format": "sing-box rule-set",
+  "output_version": 5,
+  "output_name": "ads-tracking",
+  "source_count": 3,
+  "input_rule_count": 3,
+  "unique_rule_count": 3,
+  "duplicate_rule_count": 0,
+  "srs_sha256": "7a3634ac84d29ff7f522ec3c936cbcfd9b233c80ba2781305ab910613dd5ccfc",
+  "sources": [
+    {
+      "name": "MetaCubeX category-ads-all",
+      "host": "raw.githubusercontent.com",
+      "format": "json",
+      "rules": 1,
+      "sha256": "e46ce72a5e97fa2db560a354f1e8cc4b745fb113e83b7f1f3079fbaf6f3efbcd",
+      "license_url": "https://github.com/MetaCubeX/meta-rules-dat",
+      "attribution": ""
+    },
+    {
+      "name": "MetaCubeX tracker",
+      "host": "raw.githubusercontent.com",
+      "format": "json",
+      "rules": 1,
+      "sha256": "96f3b92e29275b5ed253223b7000f871049ee0a5c797441f7f7a9d84780fa0d0",
+      "license_url": "https://github.com/MetaCubeX/meta-rules-dat",
+      "attribution": ""
+    },
+    {
+      "name": "KaringX BanAD",
+      "host": "raw.githubusercontent.com",
+      "format": "srs",
+      "rules": 1,
+      "sha256": "c19c1b6f0cd4bbaad71fb3aaad7c3eadcc6289cd57d6dcd4e5e1f1eec2f325e3",
+      "license_url": "https://github.com/KaringX/karing-ruleset",
+      "attribution": ""
+    }
+  ]
+}

@@ -1,0 +1,29 @@
+{
+  "output_version": 5,
+  "max_download_bytes": 67108864,
+  "timeout_seconds": 60,
+  "output_name": "ads-tracking",
+  "sources": [
+    {
+      "name": "MetaCubeX category-ads-all",
+      "url": "https://raw.githubusercontent.com/MetaCubeX/meta-rules-dat/sing/geo/geosite/category-ads-all.json",
+      "format": "auto",
+      "enabled": true,
+      "license_url": "https://github.com/MetaCubeX/meta-rules-dat"
+    },
+    {
+      "name": "MetaCubeX tracker",
+      "url": "https://raw.githubusercontent.com/MetaCubeX/meta-rules-dat/sing/geo/geosite/tracker.json",
+      "format": "auto",
+      "enabled": true,
+      "license_url": "https://github.com/MetaCubeX/meta-rules-dat"
+    },
+    {
+      "name": "KaringX BanAD",
+      "url": "https://raw.githubusercontent.com/KaringX/karing-ruleset/sing/ACL4SSR/BanAD.srs",
+      "format": "auto",
+      "enabled": true,
+      "license_url": "https://github.com/KaringX/karing-ruleset"
+    }
+  ]
+}
