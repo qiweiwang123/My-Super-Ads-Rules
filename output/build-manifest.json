@@ -6,14 +6,14 @@
   "input_rule_count": 3,
   "unique_rule_count": 3,
   "duplicate_rule_count": 0,
-  "srs_sha256": "7a3634ac84d29ff7f522ec3c936cbcfd9b233c80ba2781305ab910613dd5ccfc",
+  "srs_sha256": "326f27d543910c9f2e54e42af170ba5ded3864590a0d5a3cce67fb59076eccb2",
   "sources": [
     {
       "name": "MetaCubeX category-ads-all",
       "host": "raw.githubusercontent.com",
       "format": "json",
       "rules": 1,
-      "sha256": "e46ce72a5e97fa2db560a354f1e8cc4b745fb113e83b7f1f3079fbaf6f3efbcd",
+      "sha256": "1f2e5eac4cbeac91904827ccc34556add8c91d2d56bdc34b7e0ceab9038af7c4",
       "license_url": "https://github.com/MetaCubeX/meta-rules-dat",
       "attribution": ""
     },
@@ -31,7 +31,7 @@
       "host": "raw.githubusercontent.com",
       "format": "srs",
       "rules": 1,
-      "sha256": "c19c1b6f0cd4bbaad71fb3aaad7c3eadcc6289cd57d6dcd4e5e1f1eec2f325e3",
+      "sha256": "8dd5d97e75994b3ad65de83c39948bb7284c280b401765fcd4f78b7f1c7e2dba",
       "license_url": "https://github.com/KaringX/karing-ruleset",
       "attribution": ""
     }
