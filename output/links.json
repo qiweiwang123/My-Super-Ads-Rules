@@ -13,6 +13,15 @@
       }
     },
     {
+      "name": "广告与遥测",
+      "output_name": "ads-telemetry",
+      "links": {
+        "raw": "https://raw.githubusercontent.com/OWNER/REPO/main/output/ads-telemetry.srs",
+        "jsdelivr": "https://cdn.jsdelivr.net/gh/OWNER/REPO@main/output/ads-telemetry.srs",
+        "fastly": "https://fastly.jsdelivr.net/gh/OWNER/REPO@main/output/ads-telemetry.srs"
+      }
+    },
+    {
       "name": "成人内容代理",
       "output_name": "nsfw",
       "links": {

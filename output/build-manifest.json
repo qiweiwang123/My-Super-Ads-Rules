@@ -1,7 +1,7 @@
 {
   "format": "sing-box rule-set",
   "generated_by": "srs-auto-merge/1.1",
-  "group_count": 4,
+  "group_count": 5,
   "skipped_groups": [],
   "links": {
     "repo": "OWNER/REPO",
@@ -49,6 +49,78 @@
           "format": "srs",
           "rules": 1,
           "sha256": "ad22848819725d8166a0c552b15cb9357de214a5fd4dda56952c8d1b11cb9716",
+          "license_url": "https://github.com/KaringX/karing-ruleset",
+          "attribution": ""
+        }
+      ]
+    },
+    {
+      "name": "广告与遥测",
+      "description": "Geosite 广告与设备遥测、诊断上报域名合集",
+      "output_name": "ads-telemetry",
+      "output_version": 5,
+      "source_count": 6,
+      "input_rule_count": 6,
+      "unique_rule_count": 4,
+      "duplicate_rule_count": 2,
+      "srs_sha256": "a0eaa89305b117d4eecde54284d76954cb65ff1f10d56a5d040b001a993b466b",
+      "links": {
+        "raw": "https://raw.githubusercontent.com/OWNER/REPO/main/output/ads-telemetry.srs",
+        "jsdelivr": "https://cdn.jsdelivr.net/gh/OWNER/REPO@main/output/ads-telemetry.srs",
+        "fastly": "https://fastly.jsdelivr.net/gh/OWNER/REPO@main/output/ads-telemetry.srs"
+      },
+      "sources": [
+        {
+          "name": "KaringX category-telemetry",
+          "host": "fastly.jsdelivr.net",
+          "format": "srs",
+          "rules": 1,
+          "sha256": "3d57c6a66672d4f53fb99d505eb6b0553793a081cfb62456ee7cee38c3c8df3c",
+          "license_url": "https://github.com/KaringX/karing-ruleset",
+          "attribution": ""
+        },
+        {
+          "name": "KaringX category-telemetry@ads",
+          "host": "fastly.jsdelivr.net",
+          "format": "srs",
+          "rules": 1,
+          "sha256": "a124c00405de0e4284e34cff74611a768589756e7708b57d99af9a6bc3271531",
+          "license_url": "https://github.com/KaringX/karing-ruleset",
+          "attribution": ""
+        },
+        {
+          "name": "KaringX category-ads-and-telemetry",
+          "host": "fastly.jsdelivr.net",
+          "format": "srs",
+          "rules": 1,
+          "sha256": "eb6f80f25b094defa242eaee8d52577974c75f439aeb646d4c78fd818348ff31",
+          "license_url": "https://github.com/KaringX/karing-ruleset",
+          "attribution": ""
+        },
+        {
+          "name": "KaringX category-telemetry@telemetry",
+          "host": "fastly.jsdelivr.net",
+          "format": "srs",
+          "rules": 1,
+          "sha256": "3d57c6a66672d4f53fb99d505eb6b0553793a081cfb62456ee7cee38c3c8df3c",
+          "license_url": "https://github.com/KaringX/karing-ruleset",
+          "attribution": ""
+        },
+        {
+          "name": "KaringX category-ads-and-telemetry@ads",
+          "host": "fastly.jsdelivr.net",
+          "format": "srs",
+          "rules": 1,
+          "sha256": "5b6d523f23ea7ec9d99a5d30d23ef4f7b0d66fbd93a271495c34bca63f6806a6",
+          "license_url": "https://github.com/KaringX/karing-ruleset",
+          "attribution": ""
+        },
+        {
+          "name": "KaringX category-ads-and-telemetry@telemetry",
+          "host": "fastly.jsdelivr.net",
+          "format": "srs",
+          "rules": 1,
+          "sha256": "3d57c6a66672d4f53fb99d505eb6b0553793a081cfb62456ee7cee38c3c8df3c",
           "license_url": "https://github.com/KaringX/karing-ruleset",
           "attribution": ""
         }
