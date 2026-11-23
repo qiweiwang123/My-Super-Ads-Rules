@@ -38,7 +38,7 @@
     },
     {
       "name": "广告与遥测",
-      "output_name": "ads-tracking",
+      "output_name": "ads-telemetry",
       "description": "Geosite 广告与设备遥测、诊断上报域名合集",
       "sources": [
         {
