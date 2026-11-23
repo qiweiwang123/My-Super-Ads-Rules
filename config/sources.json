@@ -36,6 +36,55 @@
         }
       ]
     },
+    {
+      "name": "广告与遥测",
+      "output_name": "ads-tracking",
+      "description": "Geosite 广告与设备遥测、诊断上报域名合集",
+      "sources": [
+        {
+          "name": "KaringX category-telemetry",
+          "url": "https://fastly.jsdelivr.net/gh/KaringX/karing-ruleset@sing/geo/geosite/category-telemetry.srs",
+          "format": "auto",
+          "enabled": true,
+          "license_url": "https://github.com/KaringX/karing-ruleset"
+        },
+        {
+          "name": "KaringX category-telemetry@ads",
+          "url": "https://fastly.jsdelivr.net/gh/KaringX/karing-ruleset@sing/geo/geosite/category-telemetry@ads.srs",
+          "format": "auto",
+          "enabled": true,
+          "license_url": "https://github.com/KaringX/karing-ruleset"
+        },
+        {
+          "name": "KaringX category-ads-and-telemetry",
+          "url": "https://fastly.jsdelivr.net/gh/KaringX/karing-ruleset@sing/geo/geosite/category-ads-and-telemetry.srs",
+          "format": "auto",
+          "enabled": true,
+          "license_url": "https://github.com/KaringX/karing-ruleset"
+        },
+        {
+          "name": "KaringX category-telemetry@telemetry",
+          "url": "https://fastly.jsdelivr.net/gh/KaringX/karing-ruleset@sing/geo/geosite/category-telemetry@telemetry.srs",
+          "format": "auto",
+          "enabled": true,
+          "license_url": "https://github.com/KaringX/karing-ruleset"
+        },
+        {
+          "name": "KaringX category-ads-and-telemetry@ads",
+          "url": "https://fastly.jsdelivr.net/gh/KaringX/karing-ruleset@sing/geo/geosite/category-ads-and-telemetry@ads.srs",
+          "format": "auto",
+          "enabled": true,
+          "license_url": "https://github.com/KaringX/karing-ruleset"
+        },
+        {
+          "name": "KaringX category-ads-and-telemetry@telemetry",
+          "url": "https://fastly.jsdelivr.net/gh/KaringX/karing-ruleset@sing/geo/geosite/category-ads-and-telemetry@telemetry.srs",
+          "format": "auto",
+          "enabled": true,
+          "license_url": "https://github.com/KaringX/karing-ruleset"
+        }
+      ]
+    },
    {
       "name": "成人内容代理",
       "output_name": "nsfw",
