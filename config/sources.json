@@ -39,7 +39,7 @@
    {
       "name": "成人内容代理",
       "output_name": "nsfw",
-      "description": "合并多源成人内容规则，命中后走指定代理节点",
+      "description": "合并 KaringX 多源成人内容规则，命中后走指定代理节点",
       "sources": [
         {
           "name": "KaringX ACL4SSR Porn",
@@ -52,14 +52,14 @@
           "name": "razaxq oisd-nsfw",
           "url": "https://raw.githubusercontent.com/razaxq/dns-blocklists-sing-box/rule-set/oisd-nsfw.srs",
           "format": "auto",
-          "enabled": true,
+          "enabled": false,
           "license_url": "https://github.com/razaxq/dns-blocklists-sing-box"
         },
         {
           "name": "razaxq hagezi-nsfw",
           "url": "https://raw.githubusercontent.com/razaxq/dns-blocklists-sing-box/rule-set/hagezi-nsfw.srs",
           "format": "auto",
-          "enabled": true,
+          "enabled": false,
           "license_url": "https://github.com/razaxq/dns-blocklists-sing-box"
         },
         {
