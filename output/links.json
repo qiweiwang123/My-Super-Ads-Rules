@@ -13,6 +13,15 @@
       }
     },
     {
+      "name": "成人内容代理",
+      "output_name": "nsfw",
+      "links": {
+        "raw": "https://raw.githubusercontent.com/OWNER/REPO/main/output/nsfw.srs",
+        "jsdelivr": "https://cdn.jsdelivr.net/gh/OWNER/REPO@main/output/nsfw.srs",
+        "fastly": "https://fastly.jsdelivr.net/gh/OWNER/REPO@main/output/nsfw.srs"
+      }
+    },
+    {
       "name": "代理兜底",
       "output_name": "proxy",
       "links": {

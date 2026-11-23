@@ -25,6 +25,29 @@
 }
 ```
 
+## 成人内容代理（`nsfw`）
+
+合并 KaringX 多源成人内容规则，命中后走指定代理节点
+
+| 线路 | 地址 |
+| --- | --- |
+| 原始 raw | <https://raw.githubusercontent.com/OWNER/REPO/main/output/nsfw.srs> |
+| jsDelivr | <https://cdn.jsdelivr.net/gh/OWNER/REPO@main/output/nsfw.srs> |
+| fastly | <https://fastly.jsdelivr.net/gh/OWNER/REPO@main/output/nsfw.srs> |
+
+规则数：3 · 来源：4 个
+
+```json
+{
+  "tag": "nsfw",
+  "type": "remote",
+  "format": "binary",
+  "url": "https://fastly.jsdelivr.net/gh/OWNER/REPO@main/output/nsfw.srs",
+  "download_detour": "direct",
+  "update_interval": "24h"
+}
+```
+
 ## 代理兜底（`proxy`）
 
 非中国地址，放在规则链靠后作为兜底代理

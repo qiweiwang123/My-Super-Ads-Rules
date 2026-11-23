@@ -1,7 +1,7 @@
 {
   "format": "sing-box rule-set",
   "generated_by": "srs-auto-merge/1.1",
-  "group_count": 3,
+  "group_count": 4,
   "skipped_groups": [],
   "links": {
     "repo": "OWNER/REPO",
@@ -49,6 +49,60 @@
           "format": "srs",
           "rules": 1,
           "sha256": "ad22848819725d8166a0c552b15cb9357de214a5fd4dda56952c8d1b11cb9716",
+          "license_url": "https://github.com/KaringX/karing-ruleset",
+          "attribution": ""
+        }
+      ]
+    },
+    {
+      "name": "成人内容代理",
+      "description": "合并 KaringX 多源成人内容规则，命中后走指定代理节点",
+      "output_name": "nsfw",
+      "output_version": 5,
+      "source_count": 4,
+      "input_rule_count": 4,
+      "unique_rule_count": 3,
+      "duplicate_rule_count": 1,
+      "srs_sha256": "a7584d7b571c1ded5a6a5b5e2e812b078f8376d1282a0c64e5f45d24c7d6604c",
+      "links": {
+        "raw": "https://raw.githubusercontent.com/OWNER/REPO/main/output/nsfw.srs",
+        "jsdelivr": "https://cdn.jsdelivr.net/gh/OWNER/REPO@main/output/nsfw.srs",
+        "fastly": "https://fastly.jsdelivr.net/gh/OWNER/REPO@main/output/nsfw.srs"
+      },
+      "sources": [
+        {
+          "name": "KaringX ACL4SSR Porn",
+          "host": "raw.githubusercontent.com",
+          "format": "srs",
+          "rules": 1,
+          "sha256": "1c78efc941cecd66a4b81adc0d3b48613f0ec660ff5bf6c5d1a3917989c223fc",
+          "license_url": "https://github.com/KaringX/karing-ruleset",
+          "attribution": ""
+        },
+        {
+          "name": "KaringX ACL4SSR Pornhub",
+          "host": "raw.githubusercontent.com",
+          "format": "srs",
+          "rules": 1,
+          "sha256": "97f735c834fce62fb9734ec73197bb12d2341ce744288653f73217df2b8d3485",
+          "license_url": "https://github.com/KaringX/karing-ruleset",
+          "attribution": ""
+        },
+        {
+          "name": "KaringX geosite pornhub",
+          "host": "raw.githubusercontent.com",
+          "format": "srs",
+          "rules": 1,
+          "sha256": "2d602a2c28f562ddf1c9250c776e43471efa8f443e008debfcac18ef22d7bcf3",
+          "license_url": "https://github.com/KaringX/karing-ruleset",
+          "attribution": ""
+        },
+        {
+          "name": "KaringX runetfreedom category-porn",
+          "host": "raw.githubusercontent.com",
+          "format": "srs",
+          "rules": 1,
+          "sha256": "542f25357003ce2de92f3aec981da8dd61938ceb975aa9913b19067847ea94ad",
           "license_url": "https://github.com/KaringX/karing-ruleset",
           "attribution": ""
         }
