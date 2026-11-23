@@ -37,6 +37,55 @@
       ]
     },
     {
+      "name": "成人内容代理",
+      "output_name": "nsfw",
+      "description": "合并多源成人内容规则，命中后走指定代理节点",
+      "sources": [
+        {
+          "name": "KaringX ACL4SSR Porn",
+          "url": "https://fastly.jsdelivr.net/gh/KaringX/karing-ruleset@sing/ACL4SSR/Porn.srs",
+          "format": "auto",
+          "enabled": true,
+          "license_url": "https://github.com/KaringX/karing-ruleset"
+        },
+        {
+          "name": "razaxq oisd-nsfw",
+          "url": "https://fastly.jsdelivr.net/gh/razaxq/dns-blocklists-sing-box@rule-set/oisd-nsfw.srs",
+          "format": "auto",
+          "enabled": true,
+          "license_url": "https://github.com/razaxq/dns-blocklists-sing-box"
+        },
+        {
+          "name": "razaxq hagezi-nsfw",
+          "url": "https://fastly.jsdelivr.net/gh/razaxq/dns-blocklists-sing-box@rule-set/hagezi-nsfw.srs",
+          "format": "auto",
+          "enabled": true,
+          "license_url": "https://github.com/razaxq/dns-blocklists-sing-box"
+        },
+        {
+          "name": "KaringX ACL4SSR Pornhub",
+          "url": "https://fastly.jsdelivr.net/gh/KaringX/karing-ruleset@sing/ACL4SSR/Pornhub.srs",
+          "format": "auto",
+          "enabled": true,
+          "license_url": "https://github.com/KaringX/karing-ruleset"
+        },
+        {
+          "name": "KaringX geosite pornhub",
+          "url": "https://fastly.jsdelivr.net/gh/KaringX/karing-ruleset@sing/geo/geosite/pornhub.srs",
+          "format": "auto",
+          "enabled": true,
+          "license_url": "https://github.com/KaringX/karing-ruleset"
+        },
+        {
+          "name": "KaringX runetfreedom category-porn",
+          "url": "https://fastly.jsdelivr.net/gh/KaringX/karing-ruleset@sing/russia/runetfreedom/sing-box/rule-set-geosite/geosite-category-porn.srs",
+          "format": "auto",
+          "enabled": true,
+          "license_url": "https://github.com/KaringX/karing-ruleset"
+        }
+      ]
+    },
+    {
       "name": "代理兜底",
       "output_name": "proxy",
       "description": "非中国地址，放在规则链靠后作为兜底代理",
