@@ -135,7 +135,7 @@
       "input_rule_count": 4,
       "unique_rule_count": 3,
       "duplicate_rule_count": 1,
-      "srs_sha256": "c3e20c817b8965840ca16fa2c699a08125eca72b7541f2d64260ee0f75418076",
+      "srs_sha256": "c66a076256b9b5a1312782b46c29a54e461337ec60d45c9c581def1f489f707c",
       "links": {
         "raw": "https://raw.githubusercontent.com/OWNER/REPO/main/output/nsfw.srs",
         "jsdelivr": "https://cdn.jsdelivr.net/gh/OWNER/REPO@main/output/nsfw.srs",
@@ -174,7 +174,7 @@
           "host": "raw.githubusercontent.com",
           "format": "srs",
           "rules": 1,
-          "sha256": "1d7b8f889584887512d1eb540e23d4d33d1f4e5c1a5c98d078693e1eb53c3035",
+          "sha256": "2195a845cf2f40b308753c86e49a3ef55ebae9e3b0670e95b351b8d134d2ccd3",
           "license_url": "https://github.com/KaringX/karing-ruleset",
           "attribution": ""
         }
@@ -189,7 +189,7 @@
       "input_rule_count": 1,
       "unique_rule_count": 1,
       "duplicate_rule_count": 0,
-      "srs_sha256": "da1145cbe344bd287dd528d3eabb432c5bf50d0129f5b8a7f1a8b2c16da87e7d",
+      "srs_sha256": "c95ae47043c63e10a4da86966fd241d71dfa27cebbce1ee019620e785a6777a8",
       "links": {
         "raw": "https://raw.githubusercontent.com/OWNER/REPO/main/output/proxy.srs",
         "jsdelivr": "https://cdn.jsdelivr.net/gh/OWNER/REPO@main/output/proxy.srs",
@@ -201,7 +201,7 @@
           "host": "fastly.jsdelivr.net",
           "format": "srs",
           "rules": 1,
-          "sha256": "da1145cbe344bd287dd528d3eabb432c5bf50d0129f5b8a7f1a8b2c16da87e7d",
+          "sha256": "c95ae47043c63e10a4da86966fd241d71dfa27cebbce1ee019620e785a6777a8",
           "license_url": "https://github.com/KaringX/karing-ruleset",
           "attribution": ""
         }
