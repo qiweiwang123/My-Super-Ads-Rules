@@ -15,21 +15,21 @@
       "sources": [
         {
           "name": "KaringX category-ads-all",
-          "url": "https://fastly.jsdelivr.net/gh/KaringX/karing-ruleset@sing/geo/geosite/category-ads-all.srs",
+          "url": "https://raw.githubusercontent.com/KaringX/karing-ruleset/sing/geo/geosite/category-ads-all.srs",
           "format": "auto",
           "enabled": true,
           "license_url": "https://github.com/KaringX/karing-ruleset"
         },
         {
           "name": "KaringX tracker",
-          "url": "https://fastly.jsdelivr.net/gh/KaringX/karing-ruleset@sing/geo/geosite/tracker.srs",
+          "url": "https://raw.githubusercontent.com/KaringX/karing-ruleset/sing/geo/geosite/tracker.srs",
           "format": "auto",
           "enabled": true,
           "license_url": "https://github.com/KaringX/karing-ruleset"
         },
         {
           "name": "KaringX category-public-tracker",
-          "url": "https://fastly.jsdelivr.net/gh/KaringX/karing-ruleset@sing/geo/geosite/category-public-tracker.srs",
+          "url": "https://raw.githubusercontent.com/KaringX/karing-ruleset/sing/geo/geosite/category-public-tracker.srs",
           "format": "auto",
           "enabled": true,
           "license_url": "https://github.com/KaringX/karing-ruleset"
@@ -41,44 +41,44 @@
       "output_name": "ads-telemetry",
       "description": "Geosite 广告与设备遥测、诊断上报域名合集",
       "sources": [
-        {
+         {
           "name": "KaringX category-telemetry",
-          "url": "https://fastly.jsdelivr.net/gh/KaringX/karing-ruleset@sing/geo/geosite/category-telemetry.srs",
+          "url": "https://raw.githubusercontent.com/KaringX/karing-ruleset/sing/geo/geosite/category-telemetry.srs",
           "format": "auto",
           "enabled": true,
           "license_url": "https://github.com/KaringX/karing-ruleset"
         },
         {
           "name": "KaringX category-telemetry@ads",
-          "url": "https://fastly.jsdelivr.net/gh/KaringX/karing-ruleset@sing/geo/geosite/category-telemetry@ads.srs",
+          "url": "https://raw.githubusercontent.com/KaringX/karing-ruleset/sing/geo/geosite/category-telemetry@ads.srs",
           "format": "auto",
           "enabled": true,
           "license_url": "https://github.com/KaringX/karing-ruleset"
         },
         {
           "name": "KaringX category-ads-and-telemetry",
-          "url": "https://fastly.jsdelivr.net/gh/KaringX/karing-ruleset@sing/geo/geosite/category-ads-and-telemetry.srs",
+          "url": "https://raw.githubusercontent.com/KaringX/karing-ruleset/sing/geo/geosite/category-ads-and-telemetry.srs",
           "format": "auto",
           "enabled": true,
           "license_url": "https://github.com/KaringX/karing-ruleset"
         },
         {
           "name": "KaringX category-telemetry@telemetry",
-          "url": "https://fastly.jsdelivr.net/gh/KaringX/karing-ruleset@sing/geo/geosite/category-telemetry@telemetry.srs",
+          "url": "https://raw.githubusercontent.com/KaringX/karing-ruleset/sing/geo/geosite/category-telemetry@telemetry.srs",
           "format": "auto",
           "enabled": true,
           "license_url": "https://github.com/KaringX/karing-ruleset"
         },
         {
           "name": "KaringX category-ads-and-telemetry@ads",
-          "url": "https://fastly.jsdelivr.net/gh/KaringX/karing-ruleset@sing/geo/geosite/category-ads-and-telemetry@ads.srs",
+          "url": "https://raw.githubusercontent.com/KaringX/karing-ruleset/sing/geo/geosite/category-ads-and-telemetry@ads.srs",
           "format": "auto",
           "enabled": true,
           "license_url": "https://github.com/KaringX/karing-ruleset"
         },
         {
           "name": "KaringX category-ads-and-telemetry@telemetry",
-          "url": "https://fastly.jsdelivr.net/gh/KaringX/karing-ruleset@sing/geo/geosite/category-ads-and-telemetry@telemetry.srs",
+          "url": "https://raw.githubusercontent.com/KaringX/karing-ruleset/sing/geo/geosite/category-ads-and-telemetry@telemetry.srs",
           "format": "auto",
           "enabled": true,
           "license_url": "https://github.com/KaringX/karing-ruleset"
@@ -141,7 +141,7 @@
       "sources": [
         {
           "name": "KaringX geolocation-!cn",
-          "url": "https://fastly.jsdelivr.net/gh/KaringX/karing-ruleset@sing/geo/geosite/geolocation-!cn.srs",
+          "url": "https://raw.githubusercontent.com/KaringX/karing-ruleset/sing/geo/geosite/geolocation-!cn.srs",
           "format": "auto",
           "enabled": true,
           "license_url": "https://github.com/KaringX/karing-ruleset"
@@ -153,16 +153,16 @@
       "output_name": "direct",
       "description": "中国域名与中国 IP，命中后直连",
       "sources": [
-        {
+       {
           "name": "KaringX cn domains",
-          "url": "https://fastly.jsdelivr.net/gh/KaringX/karing-ruleset@sing/geo/geosite/cn.srs",
+          "url": "https://raw.githubusercontent.com/KaringX/karing-ruleset/sing/geo/geosite/cn.srs",
           "format": "auto",
           "enabled": true,
           "license_url": "https://github.com/KaringX/karing-ruleset"
         },
         {
           "name": "KaringX cn ip",
-          "url": "https://fastly.jsdelivr.net/gh/KaringX/karing-ruleset@sing/geo/geoip/cn.srs",
+          "url": "https://raw.githubusercontent.com/KaringX/karing-ruleset/sing/geo/geoip/cn.srs",
           "format": "auto",
           "enabled": true,
           "license_url": "https://github.com/KaringX/karing-ruleset"
