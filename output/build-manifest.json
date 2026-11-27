@@ -27,7 +27,7 @@
       "sources": [
         {
           "name": "KaringX category-ads-all",
-          "host": "fastly.jsdelivr.net",
+          "host": "raw.githubusercontent.com",
           "format": "srs",
           "rules": 1,
           "sha256": "b4577c0be9f56bb352a864dae752557cce1b15df2b8de3a1a0b9a84cc3e67d9f",
@@ -36,7 +36,7 @@
         },
         {
           "name": "KaringX tracker",
-          "host": "fastly.jsdelivr.net",
+          "host": "raw.githubusercontent.com",
           "format": "srs",
           "rules": 1,
           "sha256": "a8ecd7effc27b88e5673581342f2b8cd9cada88544fff1afa89aa3994e70ab96",
@@ -45,7 +45,7 @@
         },
         {
           "name": "KaringX category-public-tracker",
-          "host": "fastly.jsdelivr.net",
+          "host": "raw.githubusercontent.com",
           "format": "srs",
           "rules": 1,
           "sha256": "ad22848819725d8166a0c552b15cb9357de214a5fd4dda56952c8d1b11cb9716",
@@ -72,7 +72,7 @@
       "sources": [
         {
           "name": "KaringX category-telemetry",
-          "host": "fastly.jsdelivr.net",
+          "host": "raw.githubusercontent.com",
           "format": "srs",
           "rules": 1,
           "sha256": "3d57c6a66672d4f53fb99d505eb6b0553793a081cfb62456ee7cee38c3c8df3c",
@@ -81,7 +81,7 @@
         },
         {
           "name": "KaringX category-telemetry@ads",
-          "host": "fastly.jsdelivr.net",
+          "host": "raw.githubusercontent.com",
           "format": "srs",
           "rules": 1,
           "sha256": "a124c00405de0e4284e34cff74611a768589756e7708b57d99af9a6bc3271531",
@@ -90,7 +90,7 @@
         },
         {
           "name": "KaringX category-ads-and-telemetry",
-          "host": "fastly.jsdelivr.net",
+          "host": "raw.githubusercontent.com",
           "format": "srs",
           "rules": 1,
           "sha256": "eb6f80f25b094defa242eaee8d52577974c75f439aeb646d4c78fd818348ff31",
@@ -99,7 +99,7 @@
         },
         {
           "name": "KaringX category-telemetry@telemetry",
-          "host": "fastly.jsdelivr.net",
+          "host": "raw.githubusercontent.com",
           "format": "srs",
           "rules": 1,
           "sha256": "3d57c6a66672d4f53fb99d505eb6b0553793a081cfb62456ee7cee38c3c8df3c",
@@ -108,7 +108,7 @@
         },
         {
           "name": "KaringX category-ads-and-telemetry@ads",
-          "host": "fastly.jsdelivr.net",
+          "host": "raw.githubusercontent.com",
           "format": "srs",
           "rules": 1,
           "sha256": "5b6d523f23ea7ec9d99a5d30d23ef4f7b0d66fbd93a271495c34bca63f6806a6",
@@ -117,7 +117,7 @@
         },
         {
           "name": "KaringX category-ads-and-telemetry@telemetry",
-          "host": "fastly.jsdelivr.net",
+          "host": "raw.githubusercontent.com",
           "format": "srs",
           "rules": 1,
           "sha256": "3d57c6a66672d4f53fb99d505eb6b0553793a081cfb62456ee7cee38c3c8df3c",
@@ -135,7 +135,7 @@
       "input_rule_count": 4,
       "unique_rule_count": 3,
       "duplicate_rule_count": 1,
-      "srs_sha256": "c66a076256b9b5a1312782b46c29a54e461337ec60d45c9c581def1f489f707c",
+      "srs_sha256": "ab9e7bc411ecd60cfa6259a37593dd7474dbffc86e3b87df6220c3b2eb76de7d",
       "links": {
         "raw": "https://raw.githubusercontent.com/OWNER/REPO/main/output/nsfw.srs",
         "jsdelivr": "https://cdn.jsdelivr.net/gh/OWNER/REPO@main/output/nsfw.srs",
@@ -174,7 +174,7 @@
           "host": "raw.githubusercontent.com",
           "format": "srs",
           "rules": 1,
-          "sha256": "2195a845cf2f40b308753c86e49a3ef55ebae9e3b0670e95b351b8d134d2ccd3",
+          "sha256": "73f8a33a461dba23fb10dc9d23b0d90b3312ef0c84c2ebd4d3f338b89063fad0",
           "license_url": "https://github.com/KaringX/karing-ruleset",
           "attribution": ""
         }
@@ -189,7 +189,7 @@
       "input_rule_count": 1,
       "unique_rule_count": 1,
       "duplicate_rule_count": 0,
-      "srs_sha256": "c95ae47043c63e10a4da86966fd241d71dfa27cebbce1ee019620e785a6777a8",
+      "srs_sha256": "ec525b31db3ef73817f52057cbbbc9902f1320bbf36bf855bc854e0d04d91758",
       "links": {
         "raw": "https://raw.githubusercontent.com/OWNER/REPO/main/output/proxy.srs",
         "jsdelivr": "https://cdn.jsdelivr.net/gh/OWNER/REPO@main/output/proxy.srs",
@@ -198,10 +198,10 @@
       "sources": [
         {
           "name": "KaringX geolocation-!cn",
-          "host": "fastly.jsdelivr.net",
+          "host": "raw.githubusercontent.com",
           "format": "srs",
           "rules": 1,
-          "sha256": "c95ae47043c63e10a4da86966fd241d71dfa27cebbce1ee019620e785a6777a8",
+          "sha256": "ec525b31db3ef73817f52057cbbbc9902f1320bbf36bf855bc854e0d04d91758",
           "license_url": "https://github.com/KaringX/karing-ruleset",
           "attribution": ""
         }
@@ -216,7 +216,7 @@
       "input_rule_count": 2,
       "unique_rule_count": 2,
       "duplicate_rule_count": 0,
-      "srs_sha256": "9b3309bb37be14172e9a6aecb8e0af32fab7842270d1d14061e2d437ece44a35",
+      "srs_sha256": "6ef32a877b1131cc8b4b6ac9317deb8b6083896bfff432343ff72acf99f3ed46",
       "links": {
         "raw": "https://raw.githubusercontent.com/OWNER/REPO/main/output/direct.srs",
         "jsdelivr": "https://cdn.jsdelivr.net/gh/OWNER/REPO@main/output/direct.srs",
@@ -225,7 +225,7 @@
       "sources": [
         {
           "name": "KaringX cn domains",
-          "host": "fastly.jsdelivr.net",
+          "host": "raw.githubusercontent.com",
           "format": "srs",
           "rules": 1,
           "sha256": "1fe6deffc4378243a33d88c1d0000dbc1d05419bb5045bdf0fc67c3fc929e0d7",
@@ -234,10 +234,10 @@
         },
         {
           "name": "KaringX cn ip",
-          "host": "fastly.jsdelivr.net",
+          "host": "raw.githubusercontent.com",
           "format": "srs",
           "rules": 1,
-          "sha256": "ad50a548317f437035735ea9aa117ff5c54f51124d9565a14629c7c0a34db918",
+          "sha256": "1e376a84f9c85f8900838aa408d954009d21fd4822a0a43900931b79a0261be1",
           "license_url": "https://github.com/KaringX/karing-ruleset",
           "attribution": ""
         }
